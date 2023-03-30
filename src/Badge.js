@@ -5,6 +5,7 @@ import { background, color, typography } from './shared/styles';
 
 const BadgeWrapper = styled.div`
   display: inline-block;
+  background: red;
   vertical-align: top;
   font-size: 11px;
   line-height: 12px;
@@ -20,36 +21,36 @@ const BadgeWrapper = styled.div`
   }
 
   ${props =>
-    props.status === 'positive' &&
-    css`
+        props.status === 'positive' &&
+        css`
       color: ${color.positive};
       background: ${background.positive};
     `};
 
   ${props =>
-    props.status === 'negative' &&
-    css`
+        props.status === 'negative' &&
+        css`
       color: ${color.negative};
       background: ${background.negative};
     `};
 
   ${props =>
-    props.status === 'warning' &&
-    css`
+        props.status === 'warning' &&
+        css`
       color: ${color.warning};
       background: ${background.warning};
     `};
 
   ${props =>
-    props.status === 'error' &&
-    css`
+        props.status === 'error' &&
+        css`
       color: ${color.lightest};
       background: ${color.negative};
     `};
 
   ${props =>
-    props.status === 'neutral' &&
-    css`
+        props.status === 'neutral' &&
+        css`
       color: ${color.dark};
       background: ${color.mediumlight};
     `};
@@ -59,12 +60,12 @@ const BadgeWrapper = styled.div`
  * **Badges?!** We don't need no stinkin' badges!!
  */
 export function Badge({ ...props }) {
-  return <BadgeWrapper {...props} />;
+    return <BadgeWrapper {...props} />;
 }
 Badge.propTypes = {
-  status: PropTypes.oneOf(['positive', 'negative', 'neutral', 'error', 'warning']),
+    status: PropTypes.oneOf(['positive', 'negative', 'neutral', 'error', 'warning']),
 };
 
 Badge.defaultProps = {
-  status: 'neutral',
+    status: 'neutral',
 };
